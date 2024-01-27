@@ -1,9 +1,19 @@
-from django.shortcuts import render
-from django.http import JsonResponse
-from django.shortcuts import render
+from rest_framework import viewsets
+from .models import Publisher, Tag, Book, Author
+from .serializers import PublisherSerializer, TagSerializer, BookSerializer, AuthorSerializer
 
-# Create your views here.
+class PublisherViewSet(viewsets.ModelViewSet):
+    queryset = Publisher.objects.all()
+    serializer_class = PublisherSerializer
 
-def helloworld(request):
-    # return render("")
-    return JsonResponse({'main': 'hello world'})
+class TagViewSet(viewsets.ModelViewSet):
+    queryset = Tag.objects.all()
+    serializer_class = TagSerializer
+
+class BookViewSet(viewsets.ModelViewSet):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+
+class AuthorViewSet(viewsets.ModelViewSet):
+    queryset = Author.objects.all()
+    serializer_class = AuthorSerializer

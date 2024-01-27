@@ -27,10 +27,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [],
+}
 
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'books',
     'django.contrib.admin',
     'django.contrib.auth',
