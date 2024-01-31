@@ -1,5 +1,5 @@
 """
-URL configuration for bookapp project.
+URL configuration for core project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -19,5 +19,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/', include('books.urls'))
+    path('api/v1/', include('books.urls')),
+    path('auth/', include('rest_framework.urls'))
 ]
